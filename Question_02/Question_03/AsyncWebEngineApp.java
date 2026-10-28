@@ -14,3 +14,12 @@ public class AsyncWebEngineApp {
         LogProcessorTask logTask = new LogProcessorTask();
         Thread logThread = new Thread(logTask);
         logThread.setName("Log-Worker");
+
+         // Start both threads
+        telemetry.start();
+        logThread.start();
+
+        // Display thread execution states
+        System.out.println(
+            "Telemetry-Worker state: " + telemetry.getState()
+        );
