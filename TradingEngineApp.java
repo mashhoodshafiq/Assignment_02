@@ -4,3 +4,8 @@ public class TradingEngineApp {
             "FIX-Gateway", System.currentTimeMillis(),
             1000.00, "ORD-101"
         );
+         TradeEvent event2 = new ReutersQuoteEvent(
+            "Reuters-Gateway", System.currentTimeMillis(),
+            150.00, 149.50, 150.25
+        );
+
