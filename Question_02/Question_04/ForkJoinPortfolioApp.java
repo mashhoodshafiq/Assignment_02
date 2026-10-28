@@ -50,4 +50,9 @@ public class ForkJoinPortfolioApp {
 
             long stressEnd = System.nanoTime();
 
-            
+             // Calculate the adjusted total after stress testing
+            double adjustedRisk = 0.0;
+            for (double asset : assets) {
+                adjustedRisk += asset;
+            }
+
