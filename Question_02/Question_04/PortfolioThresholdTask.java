@@ -26,3 +26,9 @@ public class PortfolioThresholdTask extends RecursiveAction {
 
         // Process small segments directly
         if (end - start < THRESHOLD) {
+        
+            for (int i = start; i < end; i++) {
+                if (assets[i] > riskCap) {
+                    assets[i] *= 0.95; // Apply 5% penalty
+                }
+            }
