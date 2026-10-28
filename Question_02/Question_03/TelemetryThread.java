@@ -12,3 +12,13 @@ public class TelemetryThread extends Thread {
                 + " | CPU Usage: " + cpuUsage + "%"
                 + " | Memory Usage: " + memoryUsage + "%"
             );
+             try {
+                Thread.sleep(800);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                System.out.println("Telemetry thread interrupted.");
+                return;
+            }
+        }
+    }
+}
