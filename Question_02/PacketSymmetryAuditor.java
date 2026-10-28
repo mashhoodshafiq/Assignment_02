@@ -42,3 +42,14 @@ public class PacketSymmetryAuditor {
             System.out.println(
                 "Result: Packet is symmetric (PALINDROME)."
             );
+             System.out.println("Status: VERIFIED");
+        } else {
+            System.out.println(
+                "Result: Packet is not symmetric."
+            );
+            System.out.println("Status: REJECTED");
+        }
+
+        scanner.close();
+    }
+}
