@@ -18,3 +18,14 @@ public class PacketSymmetryAuditor {
          // Store every character in both structures.
         for (int i = 0; i < payload.length(); i++) {
             char c = payload.charAt(i);
+        
+          stack.push(c);
+            queue.enqueue(c);
+        }
+
+        boolean isSymmetric = true;
+
+        // Compare LIFO order against FIFO order.
+        while (!stack.isEmpty() && !queue.isEmpty()) {
+            char stackChar = stack.pop();
+            char queueChar = queue.dequeue();
