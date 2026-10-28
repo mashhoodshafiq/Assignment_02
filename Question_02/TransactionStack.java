@@ -22,3 +22,10 @@ public class TransactionStack {
 
         return stack[top--];
     }
+     public char peek() {
+        if (isEmpty()) {
+            throw new IllegalStateException("Stack is Empty");
+        }
+
+        return stack[top];
+    }
