@@ -12,3 +12,6 @@ public class TransactionStack {
         if (top == capacity - 1) {
             throw new IllegalStateException("Stack Overflow");
         }
+
+          stack[++top] = c;
+    }
