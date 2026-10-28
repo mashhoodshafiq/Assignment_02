@@ -16,4 +16,5 @@ public class FIXOrderEvent extends TradeEvent {
         System.out.println("Stock Price: " + basePrice);
         System.out.printf("Transaction Fee (0.15%%): %.2f%n", fee);
         System.out.printf("Total Cost: %.2f%n", totalCost);
-
+        }
+}
