@@ -12,4 +12,9 @@ public class ReutersQuoteEvent extends TradeEvent {
      @Override
     public void dispatch() {
         double spread = askPrice - bidPrice;
-
+        System.out.println("\n--- Reuters Market Quote ---");
+        System.out.println("Sender ID: " + senderId);
+        System.out.println("Timestamp: " + timestamp);
+        System.out.printf("Bid Price: %.2f%n", bidPrice);
+        System.out.printf("Ask Price: %.2f%n", askPrice);
+        System.out.printf("Bid-Ask Spread: %.2f%n", spread);    
