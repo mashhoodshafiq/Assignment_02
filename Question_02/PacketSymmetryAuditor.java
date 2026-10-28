@@ -14,3 +14,7 @@ public class PacketSymmetryAuditor {
 
         RequestQueue queue =
                 new RequestQueue(capacity);
+        
+         // Store every character in both structures.
+        for (int i = 0; i < payload.length(); i++) {
+            char c = payload.charAt(i);
