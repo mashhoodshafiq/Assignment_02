@@ -35,3 +35,10 @@ public class PacketSymmetryAuditor {
                 break;
             }
         }
+         System.out.println("\n--- Packet Verification Log ---");
+        System.out.println("Payload: " + payload);
+
+        if (isSymmetric) {
+            System.out.println(
+                "Result: Packet is symmetric (PALINDROME)."
+            );
