@@ -5,3 +5,4 @@ public class FIXOrderEvent extends TradeEvent {
         super(senderId, timestamp, basePrice);
         this.clOrdId = clOrdId;
     }
+    
