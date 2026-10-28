@@ -17,4 +17,6 @@ public class ReutersQuoteEvent extends TradeEvent {
         System.out.println("Timestamp: " + timestamp);
         System.out.printf("Bid Price: %.2f%n", bidPrice);
         System.out.printf("Ask Price: %.2f%n", askPrice);
-        System.out.printf("Bid-Ask Spread: %.2f%n", spread);    
+        System.out.printf("Bid-Ask Spread: %.2f%n", spread);  
+         }
+}  
