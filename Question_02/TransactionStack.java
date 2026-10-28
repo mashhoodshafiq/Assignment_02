@@ -15,3 +15,10 @@ public class TransactionStack {
 
           stack[++top] = c;
     }
+      public char pop() {
+        if (isEmpty()) {
+            throw new IllegalStateException("Stack Underflow");
+        }
+
+        return stack[top--];
+    }
