@@ -8,3 +8,9 @@ public class PacketSymmetryAuditor {
         String payload = scanner.nextLine();
 
         int capacity = payload.length();
+
+         TransactionStack stack =
+                new TransactionStack(capacity);
+
+        RequestQueue queue =
+                new RequestQueue(capacity);
