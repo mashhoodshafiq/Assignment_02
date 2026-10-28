@@ -26,5 +26,16 @@ public class RequestQueue {
         if (isEmpty()) {
             throw new IllegalStateException("Queue Underflow");
         }
+        char value = queue[front];
+        front = (front + 1) % capacity;
+        size--;
+
+        return value;
+    }
+
+    public boolean isEmpty() {
+        return size == 0;
+    }
+}
 
 
