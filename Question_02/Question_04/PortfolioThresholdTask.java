@@ -8,3 +8,15 @@ public class PortfolioThresholdTask extends RecursiveAction {
     private final double riskCap;
     private final int start;
     private final int end;
+
+    public PortfolioThresholdTask(
+            double[] assets,
+            double riskCap,
+            int start,
+            int end) {
+
+        this.assets = assets;
+        this.riskCap = riskCap;
+        this.start = start;
+        this.end = end;
+    }
