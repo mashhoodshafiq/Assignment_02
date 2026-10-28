@@ -22,4 +22,9 @@ public class RequestQueue {
         queue[rear] = c;
         size++;
     }
+    public char dequeue() {
+        if (isEmpty()) {
+            throw new IllegalStateException("Queue Underflow");
+        }
+
 
