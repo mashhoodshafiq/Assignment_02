@@ -23,4 +23,15 @@ public class ParallelRiskCalculator extends RecursiveTask<Double> {
             for (int i = start; i < end; i++) {
                 sum += assets[i];
             }
+            return sum;
+        }
+
+        // Divide the array into two subtasks
+        int middle = start + (end - start) / 2;
+
+        ParallelRiskCalculator leftTask =
+                new ParallelRiskCalculator(assets, start, middle);
+
+        ParallelRiskCalculator rightTask =
+                new ParallelRiskCalculator(assets, middle, end);
 
