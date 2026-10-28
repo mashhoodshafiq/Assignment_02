@@ -9,3 +9,8 @@ public class AsyncWebEngineApp {
          // Create the telemetry thread
         TelemetryThread telemetry = new TelemetryThread();
         telemetry.setName("Telemetry-Worker");
+
+        // Create the log processor thread
+        LogProcessorTask logTask = new LogProcessorTask();
+        Thread logThread = new Thread(logTask);
+        logThread.setName("Log-Worker");
