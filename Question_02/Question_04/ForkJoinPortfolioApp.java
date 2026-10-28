@@ -56,3 +56,39 @@ public class ForkJoinPortfolioApp {
                 adjustedRisk += asset;
             }
 
+            // Display results
+            System.out.println("=== Portfolio Assessment Results ===");
+            System.out.println("Number of assets: " + SIZE);
+            System.out.printf("Original total risk score: %.2f%n", totalRisk);
+            System.out.printf("Serial total risk score: %.2f%n", serialRisk);
+            System.out.printf("Adjusted total after stress test: %.2f%n",
+                    adjustedRisk);
+
+            System.out.println("\n=== Performance Metrics ===");
+
+            double serialMs = (serialEnd - serialStart) / 1_000_000.0;
+            double parallelMs =
+                    (parallelEnd - parallelStart) / 1_000_000.0;
+            double stressMs =
+                    (stressEnd - stressStart) / 1_000_000.0;
+
+            System.out.printf("Serial calculation time: %.3f ms%n", serialMs);
+            System.out.printf("Parallel calculation time: %.3f ms%n",
+                    parallelMs);
+            System.out.printf("Parallel stress-test time: %.3f ms%n",
+                    stressMs);
+
+            if (parallelMs > 0) {
+                System.out.printf("Speedup: %.2fx%n",
+                        serialMs / parallelMs);
+            }
+
+            System.out.println("ForkJoinPool parallelism: "
+                    + pool.getParallelism());
+
+        } finally {
+            pool.shutdown();
+        }
+    }
+}
+
