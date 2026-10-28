@@ -40,3 +40,11 @@ public class PortfolioThresholdTask extends RecursiveAction {
             PortfolioThresholdTask leftTask =
                     new PortfolioThresholdTask(
                             assets, riskCap, start, middle);
+            PortfolioThresholdTask rightTask =
+                    new PortfolioThresholdTask(
+                            assets, riskCap, middle, end);
+
+            invokeAll(leftTask, rightTask);
+        }
+    }
+}
