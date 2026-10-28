@@ -9,3 +9,9 @@ public class TradingEngineApp {
             150.00, 149.50, 150.25
         );
         System.out.println("=== Trading Engine Started ===");
+         event1.dispatch();
+        event2.dispatch();
+
+        System.out.println("\n=== Trading Engine Finished ===");
+    }
+}
