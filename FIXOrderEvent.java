@@ -8,4 +8,6 @@ public class FIXOrderEvent extends TradeEvent {
     }
      @Override
     public void dispatch() {
+        double fee = basePrice * 0.0015;
+        double totalCost = basePrice + fee;
 
