@@ -39,4 +39,15 @@ public class ForkJoinPortfolioApp {
 
             long parallelEnd = System.nanoTime();
 
+            // Apply the stress test in parallel
+            long stressStart = System.nanoTime();
+
+            PortfolioThresholdTask stressTask =
+                    new PortfolioThresholdTask(
+                            assets, RISK_CAP, 0, SIZE);
+
+            pool.invoke(stressTask);
+
+            long stressEnd = System.nanoTime();
+
             
