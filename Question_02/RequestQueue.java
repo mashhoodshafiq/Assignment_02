@@ -17,3 +17,9 @@ public class RequestQueue {
         if (size == capacity) {
             throw new IllegalStateException("Queue Overflow");
         }
+
+        rear = (rear + 1) % capacity;
+        queue[rear] = c;
+        size++;
+    }
+
