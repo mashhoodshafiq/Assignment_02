@@ -20,3 +20,9 @@ public class PortfolioThresholdTask extends RecursiveAction {
         this.start = start;
         this.end = end;
     }
+
+     @Override
+    protected void compute() {
+
+        // Process small segments directly
+        if (end - start < THRESHOLD) {
