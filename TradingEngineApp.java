@@ -8,4 +8,4 @@ public class TradingEngineApp {
             "Reuters-Gateway", System.currentTimeMillis(),
             150.00, 149.50, 150.25
         );
-
+        System.out.println("=== Trading Engine Started ===");
