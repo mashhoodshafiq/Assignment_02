@@ -23,3 +23,22 @@ public class AsyncWebEngineApp {
         System.out.println(
             "Telemetry-Worker state: " + telemetry.getState()
         );
+
+         System.out.println(
+            "Log-Worker state: " + logThread.getState()
+        );
+
+        System.out.println("Main thread continues executing.");
+
+        // Wait for both workers to finish
+        try {
+            telemetry.join();
+            logThread.join();
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            System.out.println("Main thread interrupted.");
+        }
+
+        System.out.println("All worker threads completed.");
+    }
+}
