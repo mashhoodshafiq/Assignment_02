@@ -1,7 +1,7 @@
 public class ReutersQuoteEvent extends TradeEvent {
     private double bidPrice;
     private double askPrice;
-    
+
     public ReutersQuoteEvent(String senderId, long timestamp,
                              double basePrice, double bidPrice,
                              double askPrice) {
@@ -9,3 +9,7 @@ public class ReutersQuoteEvent extends TradeEvent {
         this.bidPrice = bidPrice;
         this.askPrice = askPrice;
     }
+     @Override
+    public void dispatch() {
+        double spread = askPrice - bidPrice;
+
