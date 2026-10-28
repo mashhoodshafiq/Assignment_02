@@ -32,3 +32,11 @@ public class PortfolioThresholdTask extends RecursiveAction {
                     assets[i] *= 0.95; // Apply 5% penalty
                 }
             }
+        } else {
+
+            // Split the workload
+            int middle = start + (end - start) / 2;
+
+            PortfolioThresholdTask leftTask =
+                    new PortfolioThresholdTask(
+                            assets, riskCap, start, middle);
